@@ -1,15 +1,13 @@
 package com.example.healthtracking
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
 import com.example.healthtracking.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fragmentTransaction : FragmentTransaction
     private lateinit var homeFragment: HomeFragment
     private lateinit var activityFragment: ActivityFragment
+    private lateinit var tabLayout: TabLayout
+    private lateinit var viewPager: ViewPager
     private var isHome : Boolean = true
     private var isActivity : Boolean = false
 
@@ -34,6 +34,18 @@ class MainActivity : AppCompatActivity() {
         homeFragment = HomeFragment().newInstance()
         activityFragment = ActivityFragment().newInstance()
 
+        tabLayout = findViewById(R.id.tabLayout)
+        viewPager = findViewById(R.id.viewpager)
+        setupViewPager(viewPager)
+
+        tabLayout.setupWithViewPager(viewPager)
+    }
+
+    private fun setupViewPager(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(HomeFragment(),"Home")
+        adapter.addFragment(ActivityFragment(), "Activity")
+        viewPager.adapter = adapter
     }
 
 }
