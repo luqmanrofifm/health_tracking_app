@@ -37,7 +37,6 @@ class ActivityFragment : Fragment() {
     private val list = ArrayList<HistExercise>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
     }
 
@@ -143,7 +142,8 @@ class MyValueFormatter(private val xValsDateLabel: ArrayList<String>) : ValueFor
         } else {
             return ("").toString()
         }
-    }*/
+    }
+    */
 
     override fun getAxisLabel(value: Float, axis: AxisBase?): String {
         return xValsDateLabel.getOrNull(value.toInt()) ?: value.toString()

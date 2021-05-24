@@ -1,4 +1,4 @@
-package com.example.healthtracking
+package com.example.healthtracking.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 class ViewPagerAdapter(manager: FragmentManager) : FragmentStatePagerAdapter(manager){
     private val mFragmentList = ArrayList<Fragment>()
     private val mFragmentTitleList= ArrayList<String>()
+
     override fun getItem(position: Int): Fragment {
         return mFragmentList[position]
     }
