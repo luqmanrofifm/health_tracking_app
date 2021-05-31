@@ -37,11 +37,11 @@ class CreateAccountActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        //val user: FirebaseUser? = firebaseAuth.currentUser
-        /*user?.let {
+        val user: FirebaseUser? = firebaseAuth.currentUser
+        user?.let {
             startActivity(Intent(this, MainActivity::class.java))
             //toast("welcome back")
-        }*/
+        }
     }
 
     private fun notEmpty(): Boolean = binding.etEmail.text.toString().trim().isNotEmpty() &&

@@ -2,6 +2,7 @@ package com.example.healthtracking
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
@@ -9,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
 import com.example.healthtracking.adapter.ViewPagerAdapter
 import com.example.healthtracking.databinding.ActivityMainBinding
+import com.example.healthtracking.utils.FIrebaseUtil.firebaseAuth
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
@@ -49,6 +51,14 @@ class MainActivity : AppCompatActivity() {
         b.btAdd.setOnClickListener {
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
+        }
+
+        b.btMore.setOnClickListener{
+            firebaseAuth.signOut()
+            startActivity(Intent(this, CreateAccountActivity::class.java))
+            //toast("signed out")
+            Log.e("sign out","sign out success")
+            finish()
         }
     }
 
