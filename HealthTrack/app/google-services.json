@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "555334781378",
+    "project_id": "health-tracking-fada0",
+    "storage_bucket": "health-tracking-fada0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555334781378:android:edd199bd905f56fb58ae5b",
+        "android_client_info": {
+          "package_name": "com.example.healthtracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555334781378-br9f79qf40l3pcnus18ak4jstipn19ck.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrJraM6np5r_Ox719Jx0dw-y7bcrYFedk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555334781378-br9f79qf40l3pcnus18ak4jstipn19ck.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

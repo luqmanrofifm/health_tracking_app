@@ -37,6 +37,7 @@ class SignInActivity : AppCompatActivity() {
     private fun signInUser() {
         signInEmail = binding.etSignInEmail.text.toString().trim()
         signInPassword = binding.etSignInPassword.text.toString().trim()
+        Log.d("coba",signInEmail+", "+signInPassword)
 
         if (notEmpty()) {
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
