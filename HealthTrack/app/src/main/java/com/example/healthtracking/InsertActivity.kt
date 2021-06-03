@@ -4,6 +4,7 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -46,6 +47,15 @@ class InsertActivity : AppCompatActivity() {
 
         b.btDel.setOnClickListener {
             insertViewModel.delete()
+        }
+
+        b.btCek.setOnClickListener {
+            insertViewModel.getSpecific("Running")
+           // Log.e("coba", insertViewModel.result.value?.timeAdd.toString())
+            //b.tvCoba.text = insertViewModel.result.toString()
+            insertViewModel.result.observe(this, androidx.lifecycle.Observer {
+                b.tvCoba.text = it.timeAdd.toString()
+            })
         }
 
     }

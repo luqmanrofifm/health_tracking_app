@@ -1,16 +1,15 @@
 package com.example.healthtracking
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.healthtracking.db.exercise_data.ExerciseDataDB
 import com.example.healthtracking.db.exercise_data.ExerciseDataDao
 import com.example.healthtracking.db.exercise_data.ExerciseDataModel
 import kotlinx.coroutines.launch
 
 class InsertModelView(val db: ExerciseDataDao, application: Application):AndroidViewModel(application) {
+
+    lateinit var result: LiveData<ExerciseDataModel>
 
     fun insert(value: ExerciseDataModel) {
         viewModelScope.launch {
@@ -21,6 +20,12 @@ class InsertModelView(val db: ExerciseDataDao, application: Application):Android
     fun delete(){
         viewModelScope.launch {
             db.deleteAll()
+        }
+    }
+
+    fun getSpecific(word: String){
+        viewModelScope.launch {
+            result = db.getSpecificValue(word)
         }
     }
 
