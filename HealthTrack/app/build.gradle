@@ -59,6 +59,21 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    // Koin for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
+    // Koin Android Scope features
+    implementation "io.insert-koin:koin-android-scope:$koin_version"
+    // Koin Android ViewModel features
+    implementation "io.insert-koin:koin-android-viewmodel:$koin_version"
+
+    //Retrofit
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    //Heart Tracker
+    implementation 'com.github.kibotu:Heart-Rate-Ometer:-SNAPSHOT'
+
     implementation "androidx.room:room-ktx:2.3.0"
     implementation "androidx.room:room-runtime:2.3.0"
     kapt "androidx.room:room-compiler:2.3.0"

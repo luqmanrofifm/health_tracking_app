@@ -1,14 +1,14 @@
-package com.example.healthtracking
+package com.example.healthtracking.view
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.healthtracking.R
 import com.example.healthtracking.adapter.ExerciseHistoryAdapter
 import com.example.healthtracking.data.HistExercise
 import com.example.healthtracking.data.HistExerciseData.listData
@@ -23,7 +23,6 @@ import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import java.util.*
-import javax.xml.datatype.DatatypeConstants.DAYS
 
 
 class ActivityFragment : Fragment() {

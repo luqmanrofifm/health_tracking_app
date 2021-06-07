@@ -1,8 +1,7 @@
-package com.example.healthtracking
+package com.example.healthtracking.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.healthtracking.db.exercise_data.ExerciseDataDB
 import com.example.healthtracking.db.exercise_data.ExerciseDataDao
 import com.example.healthtracking.db.exercise_data.ExerciseDataModel
 import kotlinx.coroutines.launch

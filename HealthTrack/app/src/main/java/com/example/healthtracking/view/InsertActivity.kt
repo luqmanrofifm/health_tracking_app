@@ -1,13 +1,14 @@
-package com.example.healthtracking
+package com.example.healthtracking.view
 
 import android.app.TimePickerDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.healthtracking.viewmodel.ExerciseViewModelFactory
+import com.example.healthtracking.viewmodel.InsertModelView
+import com.example.healthtracking.R
 import com.example.healthtracking.databinding.ActivityInsertBinding
 import com.example.healthtracking.db.exercise_data.ExerciseDataDB
 import com.example.healthtracking.db.exercise_data.ExerciseDataModel
@@ -41,7 +42,6 @@ class InsertActivity : AppCompatActivity() {
                 calories = 0,
                 sets = 0,
                 userId = 0)
-
             insertViewModel.insert(activities)
         }
 
@@ -57,7 +57,6 @@ class InsertActivity : AppCompatActivity() {
                 b.tvCoba.text = it.timeAdd.toString()
             })
         }
-
     }
 
     fun pickTimewithPicker(tv : TextView) {
@@ -82,7 +81,6 @@ class InsertActivity : AppCompatActivity() {
         calendar.set(Calendar.MINUTE, split[1].toInt())
 
         return calendar.time
-
     }
 
     companion object {
