@@ -1,5 +1,6 @@
 package com.example.healthtracking.view
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         //sharedPref
+        sharedPref = getSharedPreferences("com.example.healthtracking", Context.MODE_PRIVATE)
         val info = sharedPref.getInt("login", 0)
 
         //check if user logged in

@@ -11,10 +11,6 @@ class WaterViewModel : ViewModel() {
     }
 
     fun onPlus() {
-        water.value = water.value!!.plus(1)
-    }
-
-    fun onMinus() {
-        water.value = water.value!!.minus(1)
+        water.value = water.value?.plus(1)
     }
 }

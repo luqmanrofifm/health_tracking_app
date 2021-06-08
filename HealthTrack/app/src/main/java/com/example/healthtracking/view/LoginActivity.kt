@@ -30,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
 
         editSP = getSharedPreferences("com.example.healthtracking", Context.MODE_PRIVATE).edit()
 
+        b.loginGuest.setOnClickListener { loginGuest() }
         b.btLogin.setOnClickListener { login() }
         b.signUp.setOnClickListener { goSignUp() }
     }
@@ -57,6 +58,12 @@ class LoginActivity : AppCompatActivity() {
         } catch (e : Exception) {
             Toast.makeText(this, "Failed to connect to server", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun loginGuest() {
+        editSP.putInt("login", 1).apply()
+        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+        startActivity(intent)
     }
 
     fun goSignUp() {

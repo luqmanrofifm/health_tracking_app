@@ -100,8 +100,7 @@ class ActivityFragment : Fragment() {
 
         barChart.setOnChartValueSelectedListener(object : OnChartValueSelectedListener{
             override fun onNothingSelected() {
-                TODO("Not yet implemented")
-                //onValueSelected(barEntriesArrayList[0], Highlight(0f,0f, 0) )
+
             }
 
             override fun onValueSelected(e: Entry?, h: Highlight?) {
