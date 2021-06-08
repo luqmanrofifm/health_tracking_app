@@ -112,7 +112,29 @@ class ActivityFragment : Fragment() {
             }
         })
 
-        list.addAll(listData)
+        //getDataFromApi
+        val data = ArrayList<ExerciseDataModel>()
+        try {
+            Dependencies().authClient.getExercise().enqueue(object :
+                Callback<ArrayList<ExerciseGetModel>>{
+                override fun onResponse(
+                    call: Call<ArrayList<ExerciseGetModel>>,
+                    response: Response<ArrayList<ExerciseGetModel>>,
+                ) {
+                    response.body()?.get(0)?.let { data.addAll(it.data) }
+                    Toast.makeText(requireActivity(), "Success", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onFailure(call: Call<ArrayList<ExerciseGetModel>>, t: Throwable) {
+
+                }
+
+            })
+        } catch (e : Error) {
+            e
+        }
+
+        list.addAll(listdata)
         showRecyclerHistoryExercise()
         return root
     }

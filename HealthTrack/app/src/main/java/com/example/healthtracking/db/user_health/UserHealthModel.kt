@@ -8,6 +8,7 @@ import java.util.*
 
 @Entity(tableName = "user_health")
 data class UserHealthModel(
+
     @PrimaryKey
     @ColumnInfo(name = "date_time")
     var dateTime: Date?,
@@ -15,18 +16,12 @@ data class UserHealthModel(
     @ColumnInfo(name = "user_id")
     var userId: Int?,
 
-    @ColumnInfo(name = "wieght")
+    @ColumnInfo(name = "weight")
     var weight: Int?,
 
     @ColumnInfo(name = "height")
     var height: Int?,
 
-    @ColumnInfo(name = "sleep")
-    var sleep: String?,
-
     @ColumnInfo(name = "pulse")
-    var pulse: Int?,
-
-    @ColumnInfo(name = "oxygen")
-    var oxygen: Int?
+    var pulse: Int?
 )

@@ -34,4 +34,9 @@
         <item name="fontFamily">sans-serif-black</item>
         <item name="color">@color/black</item>
     </style>
+
+    <style name="Editable" parent="Widget.AppCompat.EditText">
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginHorizontal" tools:ignore="NewApi">30dp</item>
+    </style>
 </resources>

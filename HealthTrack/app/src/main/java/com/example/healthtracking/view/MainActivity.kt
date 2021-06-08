@@ -59,6 +59,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
+        b.btMore.setOnClickListener {
+            val intent = Intent(this, AccountActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupViewPager(viewPager: ViewPager) {
@@ -70,12 +74,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkLogin(info : Int) {
 
-        //info = 1 for logged in
+        //info = 1 for logged in with email info = 2 for loginGuest
         if(info == 0) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
     }
+
+//    fun logOut() {
+//        sharedPref.edit().putInt("login", 0).apply()
+//        val intent = Intent(this, MainActivity::class.java)
+//        startActivity(intent)
+//    }
 
 }

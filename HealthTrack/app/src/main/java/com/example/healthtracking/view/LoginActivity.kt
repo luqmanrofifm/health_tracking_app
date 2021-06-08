@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun loginGuest() {
-        editSP.putInt("login", 1).apply()
+        editSP.putInt("login", 2).apply()
         val intent = Intent(this@LoginActivity, MainActivity::class.java)
         startActivity(intent)
     }

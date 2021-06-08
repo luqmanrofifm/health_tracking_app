@@ -17,7 +17,7 @@ val vmWater = module {
 
 val authenticateClient = module {
 
-    val baseurl = ""
+    val baseurl = "https://129abbaeab91.ngrok.io/"
 
     val instance : UserApi by lazy {
         val retrofitBuilder = Retrofit.Builder()

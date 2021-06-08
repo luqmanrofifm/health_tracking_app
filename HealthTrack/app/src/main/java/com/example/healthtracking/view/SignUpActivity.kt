@@ -56,9 +56,9 @@ class SignUpActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<UserCreateModel>, t: Throwable) {
                     Toast.makeText(this@SignUpActivity, "Account can't be created", Toast.LENGTH_SHORT).show()
                 }
-
             })
         } catch (e : Exception) {
+            Toast.makeText(this, "Failed to connect to server", Toast.LENGTH_SHORT).show()
             Log.d("error", "bikin akun")
         }
     }

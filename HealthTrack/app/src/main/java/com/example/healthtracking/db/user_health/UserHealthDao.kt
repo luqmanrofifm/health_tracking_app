@@ -14,4 +14,5 @@ interface UserHealthDao {
 
     @Query("SELECT * FROM user_health")
     fun getAllData(): LiveData<List<UserHealthModel>>
+
 }
